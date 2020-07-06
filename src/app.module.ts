@@ -5,10 +5,20 @@ import { BingModule } from './bing/bing.module';
 import { WeatherModule } from './weather/weather.module';
 import { UserModule } from './user/user.module';
 import { FavoriteModule } from './favorite/favorite.module';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { Connection } from 'typeorm';
 
 @Module({
-  imports: [BingModule, WeatherModule, UserModule, FavoriteModule],
+  imports: [
+    TypeOrmModule.forRoot(),
+    BingModule,
+    WeatherModule,
+    UserModule,
+    FavoriteModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {}
+export class AppModule {
+  constructor(private readonly connection: Connection) {}
+}

@@ -26,7 +26,37 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+[Nest](https://github.com/nestjs/nest) framework. 
+Chrome扩展程序的后端，用于管理用户的注册，提供壁纸和天气的api接口，保存其收藏的页面。
+
+**功能分区**
+> 1. User
+> 2. Bing
+> 3. Weather
+> 4. Favorite
+
+### User
+
+| 方法| 名称| 备注|
+|----| ----|----|
+|Post|注册| username,email,password |
+|Post|登录| username/email,password |
+
+> 使用JWT中间件来判断登录的状态
+ 
+> 用户的字段包括username, email, password, id.
+
+### Bing
+
+| 方法| 名称| 备注 |
+|----| ----|-----|
+|Get|获取图片| `/bing` |
+
+> 可以包含query类似`/bing?des=1`返回更多的信息
+
+### Weather
+
+### Favorite
 
 ## Installation
 
